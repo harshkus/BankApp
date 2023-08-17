@@ -1,0 +1,43 @@
+* {
+    margin : 0;
+}
+
+.container {
+    background-color : #3a3632;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display : flex;
+    justify-content: center;
+}
+
+.logo {
+    padding-left: 10px;
+    height:auto;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-menu ul{
+    font-size:20px;
+}
+
+.navbar-menu li{
+    display: inline-block;
+    padding : 10px;
+}
+
+.navbar-menu a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
