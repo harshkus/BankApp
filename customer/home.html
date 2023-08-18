@@ -2,12 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Oracle</title>
+    <title>Home</title>
     <link rel="icon" href="../assets/images/o.svg">
-    <!-- google fonts -->
-    <link href="//fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,400;0,600;0,700;1,600&display=swap"
-          rel="stylesheet">
-    <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/customerhome.css">
 </head>
 <body>
@@ -23,10 +19,13 @@
                         <a class="nav-link active" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Loan Application</a>
+                        <a class="nav-link active" href="emicalculator.html">EMI calculator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Help</a>
+                        <a class="nav-link" href="loanapplication.html">Loan Application</a>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" id="logout-button">Logout</p>
                     </li>
                 </ul>
             </div>
@@ -34,9 +33,22 @@
     </div>
 </header>
 <div class="dashboard-body">
-    <ul id="loan-list">
-    </ul>
+<!--    <div class="centerwrapper" id="loan-list"></div>-->
+    <div class="table-container box">
+        <table id="datatable" class="styled-table table table-striped">
+            <thead>
+            <tr>
+                <td>Load ID</td>
+                <td>Loan Type</td>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
 </div>
-<script src="../assets/js/customerscript.js"></script>
+
+<script src="../assets/js/customerhome.js"></script>
 </body>
 </html>

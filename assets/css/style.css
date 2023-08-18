@@ -3,12 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Rubik', sans-serif;
 }
 
 body {
-  background-image : url("/assets/images/oracle_headquarter.jpg");
+  background-image : url("../images/oracle_headquarter.jpg");
   background-size: cover;
-  font-family: 'Rubik', sans-serif;
 }
 
 .login-form {
@@ -38,9 +38,22 @@ body {
   opacity: 0;
 }
 
+#register-error-msg {
+  color: #C74634;
+  text-align: center;
+  opacity: 0;
+}
+
+#register-success-msg {
+  color: darkgreen;
+  text-align: center;
+  opacity: 0;
+}
+
 .login-form .input-field {
   padding: 12px 5px;
 }
+
 .login-form .input-field input {
   font-size: 16px;
   display: block;
