@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    background-color : #3a3632;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display : flex;
+    justify-content: center;
+}
+
+.logo {
+    padding-left: 10px;
+    height:auto;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-menu ul{
+    font-size:20px;
+}
+
+.navbar-menu li{
+    display: inline-block;
+    padding : 10px;
+}
+
+.navbar-menu a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-menu p{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#logout-button{
+    cursor: pointer;
+}
+
+
+.site-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-header h1 {
+    margin: 0;
+    padding:15px;
+    text-align:center;
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    color:black;
+}
+
+h3{
+    font-size: 15px;
+    font-weight:normal;
+    color:black;
+}
+.form-field label{
+    margin:15px;
+    vertical-align:middle;
+    display: inline-block;
+    width:250px;
+    font-size: 15px;
+}
+
+.form-field h3{
+    margin:15px;
+    vertical-align: top;
+    display: inline-block;
+    width:250px;
+    font-size: 15px;
+}
+
+.form-field #fileList{
+    margin:15px;
+    display: inline-block;
+    width:50%;
+    font-size: 15px;
+}
+
+input:focus {
+    background: white;
+}
+
+input[type="text"]{
+    background:white;
+    outline: 0;
+}
+
+input[type="tel"]{
+    background:white;
+    outline:0;
+}
+
+input[type="Submit"]{
+    border-radius: 8px;
+    margin:30px 1px 15px 10px;
+}
+h2{
+    font-size: 20px;
+}
+#course{
+    width:90px;
+}
+form{
+    width:auto;
+}
+
+#button_div {
+    display : flex;
+    justify-content: center;
+}
+
+#button_div button{
+    margin : 20px;
+    height: 30px;
+    width: 80px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #C74634;
+    cursor: pointer;
+    text-transform: uppercase
+}

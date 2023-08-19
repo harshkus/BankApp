@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Info</title>
+    <link rel="icon" href="assets/images/o.svg">
+    <link rel="stylesheet" href="assets/css/loan.css">
+</head>
+<body>
+<header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="assets/images/oracle.svg" class="logo" id="navbar-logo" alt="Logo">
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" id="logout-button">Logout</p>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div id="form">
+
+    <div class="site-container">
+        <main class="site-content">
+            <div id="button_div" class="form-field">
+                <button id="approve_button">Approve</button>
+                <button id="reject_button">Delete</button>
+            </div>
+
+            <br>
+            <h2>Application Details</h2>
+            <br>
+
+            <div class="form-field loan">
+                <label>Application ID</label>
+                <input type="text"  id="application_id" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Customer ID</label>
+                <input type="text"  id="customer_id" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Loan Type</label>
+                <input type="text"  id="loan_type" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Loan Amount</label>
+                <input type="text"  id="loan_amount" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Status</label>
+                <input type="text"  id="status" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Remarks</label>
+                <input type="text"  id="remarks" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Balance</label>
+                <input type="text"  id="balance" size="20" readonly>
+            </div>
+
+        </main>
+    </div>
+</div>
+<script src="assets/js/applicationinfo.js"></script>
+</body>
+</html>
