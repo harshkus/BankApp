@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
+    <title>Customers</title>
     <link rel="icon" href="assets/images/o.svg">
     <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/css/profile.css">
-    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header id="site-header" class="fixed-top">
@@ -18,7 +16,7 @@
             <div class="navbar-menu">
                 <ul>
                     <li class="nav-item">
-                        <a class="nav-link active" href="home.html">Home</a>
+                        <a class="nav-link active" href="addcustomer.html">Add Customer</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="emicalculator.html">EMI calculator</a>
@@ -34,20 +32,23 @@
         </nav>
     </div>
 </header>
-<div class="card-container">
-    <div class="card">
-        <div class="info"><span>My Profile</span>
-            <button id="savebutton">edit</button>
-        </div>
-        <div class="forms">
-            <div class="inputs"><span>First Name</span> <input id="f1" type="text" readonly></div>
-            <div class="inputs"><span>Last Name</span> <input id="f4" type="text" readonly></div>
-            <div class="inputs"><span>Gender</span> <input id="f2" type="text" readonly></div>
-            <div class="inputs"><span>Mobile</span> <input id="f3" type="text" readonly></div>
-            <div class="inputs"><span>Address</span> <input id="f5" type="text" readonly></div>
-        </div>
+<div class="dashboard-body">
+    <div class="table-container box">
+        <table id="datatable" class="styled-table table table-striped">
+            <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>First Name</th>
+                <th>Last</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
 </div>
-<script src="assets/js/profile.js"></script>
+
+<script src="assets/js/customer.js"></script>
 </body>
 </html>

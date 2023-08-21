@@ -41,13 +41,10 @@
         <main class="site-content">
             <div id="button_div" class="form-field">
                 <button id="delete_button">Delete</button>
-                <button id="edit_button">Edit</button>
-                <button id="pay_button">Pay</button>
-                <button id="topup_button">Topup</button>
             </div>
 
             <br>
-            <h2>Application Details</h2>
+            <h1>Application Details</h1>
             <br>
 
             <div class="form-field loan">
@@ -71,18 +68,33 @@
             </div>
 
             <div class="form-field loan">
+                <label>EMI</label>
+                <input type="text"  id="emi" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
                 <label>Status</label>
                 <input type="text"  id="status" size="20" readonly>
             </div>
 
             <div class="form-field loan">
-                <label>Remarks</label>
-                <input type="text"  id="remarks" size="20" readonly>
+                <label>Date</label>
+                <input type="text"  id="date" size="20" readonly>
             </div>
 
             <div class="form-field loan">
-                <label>Balance</label>
-                <input type="text"  id="balance" size="20" readonly>
+                <label>Interest</label>
+                <input type="text"  id="interest" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Tenure</label>
+                <input type="text"  id="tenure" size="20" readonly>
+            </div>
+            <br>
+            <div class="form-field image">
+                <h2>Uploaded Document:</h2>
+                <div id="image-list"></div>
             </div>
 
         </main>

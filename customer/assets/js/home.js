@@ -11,6 +11,7 @@ window.onload = function() {
                 let tr = dataTable.insertRow();
                 tr.addEventListener('click',function(){
                     sessionStorage.setItem("loanType", item.loanType);
+                    sessionStorage.setItem("interest", item.interest);
                     window.location.href = "loan.html";
                 });
                 tr.classList.add("clickable-row");
@@ -32,6 +33,6 @@ logoutbutton.addEventListener("click", (e) => {
     if (result) {
         e.preventDefault();
         sessionStorage.clear();
-        window.location.replace("index.html");
+        window.location.replace("../index.html");
     }
 })

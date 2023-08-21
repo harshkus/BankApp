@@ -142,3 +142,29 @@ form{
     cursor: pointer;
     text-transform: uppercase
 }
+
+#image-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+#image-list li {
+    flex: 1 1 calc(33.33% - 20px); /* Make each item occupy one-third of the available width minus gap */
+    max-width: calc(33.33% - 20px);
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the image */
+#image-list img {
+    display: block;
+    width: 100%;
+    height: auto;
+}

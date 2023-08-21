@@ -1,5 +1,5 @@
 let dataTable = document.getElementById("datatable").getElementsByTagName("tbody")[0];
-const columnOrder = ["loanId", "loanType", "interest"];
+const columnOrder = ["customerId", "firstName", "lastName"];
 
 window.onload = function() {
     let xhttp = new XMLHttpRequest();
@@ -11,9 +11,8 @@ window.onload = function() {
                 let reorderedRowData = columnOrder.map(column => item[column]);
                 let tr = dataTable.insertRow();
                 tr.addEventListener('click',function(){
-                    sessionStorage.setItem("loanType", item.loanType);
-                    sessionStorage.setItem("interest", item.interest);
-                    window.location.href = "loan.html";
+                    sessionStorage.setItem("customerId", item.customerId);
+                    window.location.href = "customerdetails.html";
                 });
                 tr.classList.add("clickable-row");
                 for(let key in reorderedRowData){
@@ -24,7 +23,7 @@ window.onload = function() {
 
         }
     };
-    xhttp.open("GET", "http://localhost:8080/LoanAutomationSystem/rest/customer/loans", true);
+    xhttp.open("GET", "http://localhost:8080/LoanAutomationSystem/rest/clerk/customers", true);
     xhttp.send();
 };
 

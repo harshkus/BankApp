@@ -1,4 +1,4 @@
-let customerid = null;
+let customerId = null;
 let firstNameField = document.getElementById("f1");
 let lastNameField = document.getElementById("f4");
 let genderField = document.getElementById("f2");
@@ -6,7 +6,7 @@ let numberField = document.getElementById("f3");
 let addressField = document.getElementById("f5");
 
 window.onload = function() {
-    customerid = sessionStorage.getItem("customerId");
+    customerId = sessionStorage.getItem("customerId");
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -19,7 +19,7 @@ window.onload = function() {
             addressField.value = json.responseData[0]["address"];
         }
     };
-    xhttp.open("GET", "http://localhost:8080/LoanAutomationSystem/rest/customer/viewcustomer/"+customerid, true);
+    xhttp.open("GET", "http://localhost:8080/LoanAutomationSystem/rest/customer/viewcustomer/"+customerId, true);
     xhttp.send();
 };
 
@@ -37,7 +37,7 @@ savebutton.addEventListener('click',function(){
         savebutton.innerHTML = "save";
     } else {
         let json = JSON.stringify({
-            "customerId" : customerid,
+            "customerId" : customerId,
             "firstName" : firstNameField.value,
             "lastName" : lastNameField.value,
             "gender" : genderField.value,

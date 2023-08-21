@@ -49,7 +49,6 @@ function populateTable(json) {
         }
     })
     dataTable.replaceChild(tbody, dataTable.getElementsByTagName("tbody")[0]);
-    console.log("cursor comes here");
 }
 
 function createInputField(selectedCriteria) {
@@ -78,9 +77,9 @@ function createInputField(selectedCriteria) {
         const dropdownInput = document.createElement("select");
         // Populate dropdown options based on your data
         dropdownInput.innerHTML = `
-            <option value="pending">Pending</option>
-            <option value="approved">Approved</option>
-            <option value="rejected">Rejected</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
           `;
         inputContainer.appendChild(dropdownInput);
     }else {
@@ -137,4 +136,14 @@ searchButton.addEventListener("click", function () {
             populateTable)
     }
 });
+
+let logoutbutton = document.getElementById("logout-button");
+logoutbutton.addEventListener("click", (e) => {
+    var result = confirm("Want to Log Out?");
+    if (result) {
+        e.preventDefault();
+        sessionStorage.clear();
+        window.location.replace("../index.html");
+    }
+})
 

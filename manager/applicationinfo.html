@@ -27,14 +27,12 @@
     </div>
 </header>
 <div id="form">
-
     <div class="site-container">
         <main class="site-content">
-            <div id="button_div" class="form-field">
+            <div id="button_div" class="form-field" style="opacity: 0">
                 <button id="approve_button">Approve</button>
                 <button id="reject_button">Reject</button>
             </div>
-
             <br>
             <h2>Application Details</h2>
             <br>
@@ -65,15 +63,29 @@
             </div>
 
             <div class="form-field loan">
-                <label>Remarks</label>
-                <input type="text"  id="remarks" size="20" readonly>
+                <label>EMI</label>
+                <input type="text"  id="emi" size="20" readonly>
             </div>
 
             <div class="form-field loan">
-                <label>Balance</label>
-                <input type="text"  id="balance" size="20" readonly>
+                <label>Date</label>
+                <input type="text"  id="date" size="20" readonly>
             </div>
 
+            <div class="form-field loan">
+                <label>Interest</label>
+                <input type="text"  id="interest" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Tenure</label>
+                <input type="text"  id="tenure" size="20" readonly>
+            </div>
+            <br>
+            <div class="form-field image">
+                <h2>Uploaded Document:</h2>
+                <div id="image-list"></div>
+            </div>
         </main>
     </div>
 </div>

@@ -22,6 +22,6 @@ logoutbutton.addEventListener("click", (e) => {
     if (result) {
         e.preventDefault();
         sessionStorage.clear();
-        window.location.replace("index.html");
+        window.location.replace("../index.html");
     }
 })

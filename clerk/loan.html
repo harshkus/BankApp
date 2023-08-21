@@ -40,7 +40,7 @@
     <div class="site-container">
         <main class="site-content">
             <br>
-            <h2>Loan Type</h2>
+            <h2>Loan Details</h2>
             <br>
 
             <div class="form-field loan">
@@ -50,6 +50,11 @@
             <div class="form-field amount">
                 <label>Amount</label>
                 <input name="Loan Amount" type="text"  id="form_amount" size="20">
+            </div>
+
+            <div class="form-field amount">
+                <label>Tenure</label>
+                <input name="Loan Amount" type="text"  id="form_tenure" size="20">
             </div>
 
             <br>
@@ -67,8 +72,13 @@
                 <span id="username_error_msg" style="opacity: 0">Invalid username</span>
             </div>
             <div class="form-field">
-                <label>Customer Name</label>
-                <input type="text" name="candidate name" id="form_name" placeholder="Name" required>
+                <label>Customer First Name</label>
+                <input type="text" name="candidate name" id="form_fname" placeholder="Name" required>
+            </div>
+
+            <div class="form-field">
+                <label>Customer Last Name</label>
+                <input type="text" name="candidate name" id="form_lname" placeholder="Name" required>
             </div>
 
             <div class="form-field address">
@@ -76,33 +86,24 @@
                 <input type="text" name="candidate street" id="form_address" placeholder="Address" size="50" required>
             </div>
 
-            <div class="form-field address">
-                <label>Country of Origin</label>
-                <input type="text" name="country" id="form_country" placeholder="Country" size="50" required>
-            </div>
-
             <div class="form-field">
-                <label>Home phone</label>
-                <input type="tel" name="candidate home phone" id="mobilenumber" maxlength="3" size="25"
+                <label>Mobile</label>
+                <input type="tel" name="candidate home phone" id="form_number" maxlength="10" size="25"
                        placeholder="Example: (+91) 9876543210" required>
             </div>
 
             <br>
             <h2>Documents</h2>
             <br>
-
             <div class="form-field address">
-                <label>Attach a photo</label>
-                <input type="file" name="Attach a photo" value="Attach a photo"><br>
-            </div>
-            <div class="form-field address">
-                <label>Other supporting documents</label>
-                <input type="file" name="Upload documents" value="Upload Documents" id="fileupload" onchange="javascript:updateList()" multiple><br>
+                <label>Upload supporting document</label>
+                <input type="file" name="Upload documents" accept=".jpg" value="Upload Documents" id="image-input" onchange="javascript:handleImageUpload(event)"><br>
             </div>
 
             <div class="form-field address">
-                <h3>Selected files:</h3>
-                <div id="fileList"></div>
+                <h3>Selected file:</h3>
+                <div id="image-list">
+                </div>
             </div>
 
 

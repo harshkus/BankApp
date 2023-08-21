@@ -1,4 +1,4 @@
-let deleteButton = document.getElementById("delete_button");
+let imageList = document.getElementById("image-list");
 let applicationId = null;
 
 window.onload = function (){
@@ -9,6 +9,14 @@ window.onload = function (){
         fill)
 };
 
+function createImageElement(src) {
+    const img = new Image();
+    img.src = src;
+    img.alt = 'Uploaded Image';
+    img.style.maxWidth = '100%';
+    return img;
+}
+
 let fill = function (data) {
     document.getElementById("application_id").value = (data.responseData[0]).applicationId;
     document.getElementById("customer_id").value = (data.responseData[0]).customerId;
@@ -18,6 +26,10 @@ let fill = function (data) {
     document.getElementById("date").value = (data.responseData[0]).date;
     document.getElementById("interest").value = (data.responseData[0]).interest;
     document.getElementById("tenure").value = (data.responseData[0]).tenure;
+    const img = createImageElement((data.responseData[0]).document);
+    const li = document.createElement('li');
+    li.appendChild(img);
+    imageList.appendChild(li);
 }
 
 function sendAsyncRequest(httpMethodName, url, callbackFn,  reqBodyData = undefined) {
@@ -43,7 +55,7 @@ logoutbutton.addEventListener("click", (e) => {
     if (result) {
         e.preventDefault();
         sessionStorage.clear();
-        window.location.replace("index.html");
+        window.location.replace("../index.html");
     }
 })
 
