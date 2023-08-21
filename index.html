@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roles</title>
+    <link rel="icon" href='customer/assets/images/o.svg'>
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image : url("oracle_headquarter.jpg");
+            background-size: cover;
+            align-content: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .card {
+            width: 500px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column; /* Display options in a column */
+        }
+
+        .option {
+            background-color: #C74634;
+            color: white;
+            margin: 10px 0; /* Add some spacing between options */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="options">
+            <div class="option" id="customerOption">Customer</div>
+            <div class="option" id="clerkOption">Clerk</div>
+            <div class="option" id="managerOption">Manager</div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("customerOption").addEventListener("click", function() {
+            window.location.href = "customer/index.html";
+        });
+
+        document.getElementById("clerkOption").addEventListener("click", function() {
+            window.location.href = "clerk/index.html";
+        });
+
+        document.getElementById("managerOption").addEventListener("click", function() {
+            window.location.href = "manager/index.html";
+        });
+    </script>
+</body>
+</html>

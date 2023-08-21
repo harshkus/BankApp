@@ -19,15 +19,6 @@
                         <a class="nav-link active" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="profile.html">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="emicalculator.html">EMI calculator</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="loanapplication.html">Loan Application</a>
-                    </li>
-                    <li class="nav-item">
                         <p class="nav-link" id="logout-button">Logout</p>
                     </li>
                 </ul>
@@ -36,15 +27,8 @@
     </div>
 </header>
 <div id="form">
-
     <div class="site-container">
         <main class="site-content">
-            <div id="button_div" class="form-field">
-                <button id="delete_button">Delete</button>
-                <button id="edit_button">Edit</button>
-                <button id="pay_button">Pay</button>
-                <button id="topup_button">Topup</button>
-            </div>
 
             <br>
             <h2>Application Details</h2>
@@ -76,13 +60,18 @@
             </div>
 
             <div class="form-field loan">
-                <label>Remarks</label>
-                <input type="text"  id="remarks" size="20" readonly>
+                <label>Date</label>
+                <input type="text"  id="date" size="20" readonly>
             </div>
 
             <div class="form-field loan">
-                <label>Balance</label>
-                <input type="text"  id="balance" size="20" readonly>
+                <label>Interest</label>
+                <input type="text"  id="interest" size="20" readonly>
+            </div>
+
+            <div class="form-field loan">
+                <label>Tenure</label>
+                <input type="text"  id="tenure" size="20" readonly>
             </div>
 
         </main>

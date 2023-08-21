@@ -1,40 +1,66 @@
-let dataTable = document.getElementById("datatable").getElementsByTagName("tbody")[0];
+let dataTable = document.getElementById("datatable");
 let customerId = null;
-const columnOrder = ["applicationNo", "customerId", "loanType", "loanAmount", "status", "remarks", "balance"];
+const columnOrder = ["applicationId", "customerId", "loanType", "loanAmount", "status", "date", "interest", "tenure"];
+const idSearch = document.getElementById("idSearch");
+const searchButton = document.getElementById("searchButton");
 
-window.onload = function() {
+
+window.onload = function (){
     customerId = sessionStorage.getItem("customerId");
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            let json = JSON.parse(xhttp.responseText);
-            var i = 0;
-            json.responseData.forEach(function (item){
-                let reorderedRowData = columnOrder.map(column => item[column]);
-                let tr = dataTable.insertRow(i++);
-                tr.addEventListener('click',function(){
-                    sessionStorage.setItem("applicationId", item.applicationNo);
-                    window.location.href = "applicationinfo.html";
-                });
-                tr.classList.add("clickable-row");
-                var j=0;
-                for(let key in reorderedRowData){
-                    let cell = tr.insertCell(j++);
-                    cell.innerHTML = reorderedRowData[key];
-                }
-            })
+    sendAsyncRequest('GET',
+        "http://localhost:8080/LoanAutomationSystem/rest/customer/getapplication/"+customerId,
+        populateTable);
+}
+
+function sendAsyncRequest(httpMethodName, url, callbackFn,  reqBodyData = undefined) {
+    var req = new XMLHttpRequest()
+    req.onreadystatechange = function () {
+        if (req.status === 200 && req.readyState === 4) {
+            callbackFn(JSON.parse(req.responseText))
         }
-    };
-    xhttp.open("GET", "http://localhost:8080/LoanAutomationSystem/rest/customer/getapplication/"+customerId, true);
-    xhttp.send();
-};
+    }
+    req.open(httpMethodName, url, true)
+
+    if (reqBodyData){
+        req.setRequestHeader('Content-Type', 'application/json');
+        req.send(JSON.stringify(reqBodyData));
+    }
+    else
+        req.send()
+}
+
+function populateTable(json) {
+    let tbody = document.createElement("tbody");
+    json.responseData.forEach(function (item){
+        let reorderedRowData = columnOrder.map(column => item[column]);
+        let tr = tbody.insertRow();
+        tr.addEventListener('click',function(){
+            sessionStorage.setItem("applicationId", item.applicationId);
+            window.location.href = "applicationinfo.html";
+        });
+        tr.classList.add("clickable-row");
+        for(let key in reorderedRowData){
+            let cell = tr.insertCell();
+            cell.innerHTML = reorderedRowData[key];
+        }
+    })
+    dataTable.replaceChild(tbody, dataTable.getElementsByTagName("tbody")[0]);
+}
+
+searchButton.addEventListener("click", function () {
+    const searchInputValue = idSearch.value;
+    sendAsyncRequest('GET',
+        'http://localhost:8080/LoanAutomationSystem/rest/customer/getloanapplication/'+searchInputValue,
+        populateTable);
+});
 
 let logoutbutton = document.getElementById("logout-button");
 logoutbutton.addEventListener("click", (e) => {
-    var result = confirm("Want to Log Out?");
+    let result = confirm("Want to Log Out?");
     if (result) {
         e.preventDefault();
         sessionStorage.clear();
         window.location.replace("index.html");
     }
 })
+

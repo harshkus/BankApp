@@ -1,22 +1,23 @@
 let dataTable = document.getElementById("datatable").getElementsByTagName("tbody")[0];
+const columnOrder = ["loanId", "loanType", "interest"];
 
 window.onload = function() {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             let json = JSON.parse(xhttp.responseText);
-            var i = 0;
+            console.log(json);
             json["responseData"].forEach(function (item){
-                let tr = dataTable.insertRow(i++);
+                let reorderedRowData = columnOrder.map(column => item[column]);
+                let tr = dataTable.insertRow();
                 tr.addEventListener('click',function(){
                     sessionStorage.setItem("loanType", item.loanType);
                     window.location.href = "loan.html";
                 });
                 tr.classList.add("clickable-row");
-                let j = 0;
-                for(let key in item){
-                    let cell = tr.insertCell(j++);
-                    cell.innerHTML = item[key];
+                for(let key in reorderedRowData){
+                    let cell = tr.insertCell();
+                    cell.innerHTML = reorderedRowData[key];
                 }
             })
 

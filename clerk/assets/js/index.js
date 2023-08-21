@@ -10,21 +10,15 @@ loginButton.addEventListener("click", (e) => {
     let xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
         let json = JSON.parse(xhttp.responseText);
-        if(json.responseData !== -1){
-            sessionStorage.setItem("customerId", json.responseData);
+        if(json.responseData){
             window.location.replace("home.html");
         }else{
             loginErrorMsg.style.opacity = 1;
         }
     };
-    xhttp.open("POST", "http://localhost:8080/LoanAutomationSystem/rest/customer/login", true);
+    xhttp.open("POST", "http://localhost:8080/LoanAutomationSystem/rest/clerk/clogin", true);
     xhttp.setRequestHeader("Accept", "application/json");
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.send(data);
-})
-
-registerIndexPageButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location.href = "register.html";
 })
 

@@ -19,7 +19,7 @@
                         <a class="nav-link active" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="profile.html">Profile</a>
+                        <a class="nav-link active" href="addcustomer.html">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="emicalculator.html">EMI calculator</a>
@@ -57,7 +57,17 @@
             <br>
 
             <div class="form-field">
-                <label>Your Name</label>
+                <label>Username</label>
+                <input type="text" name="candidate username" id="form_username" placeholder="Username" required>
+            </div>
+            <div class="form-field">
+                <label>Customer ID</label>
+                <input type="text" name="candidate id" id="form_id" placeholder="Customer ID" required readonly>
+                <button id="get_id">Get Customer ID</button>
+                <span id="username_error_msg" style="opacity: 0">Invalid username</span>
+            </div>
+            <div class="form-field">
+                <label>Customer Name</label>
                 <input type="text" name="candidate name" id="form_name" placeholder="Name" required>
             </div>
 

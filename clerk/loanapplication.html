@@ -19,7 +19,7 @@
                         <a class="nav-link active" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="profile.html">Profile</a>
+                        <a class="nav-link active" href="addcustomer.html">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="emicalculator.html">EMI calculator</a>
@@ -32,6 +32,21 @@
         </nav>
     </div>
 </header>
+<div id="searchContainer" >
+    <label for="searchCriteria">Search Criteria:</label>
+    <select id="searchCriteria">
+        <option disabled selected> -- Select an option -- </option>
+        <option value="applicationId">Application Id</option>
+        <option value="customerId">Customer Id</option>
+        <option value="loanType">Loan Type</option>
+        <option value="date">Date</option>
+        <!-- Add more options based on your use case -->
+    </select>
+    <div id="inputContainer">
+        <!-- Input fields will be added dynamically here -->
+    </div>
+    <button id="searchButton">Search</button>
+</div>
 <div class="dashboard-body">
     <div class="table-container box" style="width:80vw;">
         <table id="datatable" class="styled-table table table-striped">
@@ -42,8 +57,9 @@
                 <th id="loanType">Loan Type</th>
                 <th id="loanAmount">Loan Amount</th>
                 <th id="status">Status</th>
-                <th id="remarks">Remarks</th>
-                <th id="balance">Balance</th>
+                <th id="date">Date</th>
+                <th id="interest">Interest</th>
+                <th id="tenure">Tenure</th>
             </tr>
             </thead>
             <tbody>
