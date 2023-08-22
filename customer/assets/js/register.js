@@ -9,8 +9,9 @@ registerButton.addEventListener("click", (e) => {
     var data = JSON.stringify({"userName" : nameInput.value, "password" : passwordInput.value});
     let xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
-        if(this.status === 200){
-            RegisterSuccessMsg.style.opacity = 1;
+        let json = JSON.parse(xhttp.responseText);
+        if(this.status === 200 && json.responseData){
+            RegisterSuccessMsg.style.opacity = "1";
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 if(xhr.status === 200){
@@ -34,7 +35,7 @@ registerButton.addEventListener("click", (e) => {
                 window.location.href = "index.html";
             }, 2000); // 5000 milliseconds = 5 seconds
         }else{
-            RegisterErrorMsg.style.opacity = 1;
+            RegisterErrorMsg.style.opacity = "1";
         }
     };
     xhttp.open("POST", "http://localhost:8080/LoanAutomationSystem/rest/customer/register", true);

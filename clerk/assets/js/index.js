@@ -13,7 +13,7 @@ loginButton.addEventListener("click", (e) => {
         if(json.responseData){
             window.location.replace("home.html");
         }else{
-            loginErrorMsg.style.opacity = 1;
+            loginErrorMsg.style.opacity = "1";
         }
     };
     xhttp.open("POST", "http://localhost:8080/LoanAutomationSystem/rest/clerk/clogin", true);
