@@ -27,6 +27,7 @@ let fill = function (data) {
     document.getElementById("customer_id").value = applicationJson.customerId;
     document.getElementById("loan_type").value = applicationJson.loanType;
     document.getElementById("loan_amount").value = applicationJson.loanAmount;
+    document.getElementById("emi").value = applicationJson.emi;
     document.getElementById("status").value = applicationJson.status;
     document.getElementById("date").value = applicationJson.date;
     document.getElementById("interest").value = applicationJson.interest;
@@ -91,11 +92,10 @@ rejectButton.addEventListener("click", (e) => {
 
 let logoutbutton = document.getElementById("logout-button");
 logoutbutton.addEventListener("click", (e) => {
+    e.preventDefault();
     var result = confirm("Want to Log Out?");
     if (result) {
-        e.preventDefault();
-        sessionStorage.clear();
-        window.location.replace("../index.html");
+        window.location.href = "../index.html";
     }
 })
 

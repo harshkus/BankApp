@@ -22,6 +22,7 @@ let fill = function (data) {
     document.getElementById("customer_id").value = (data.responseData[0]).customerId;
     document.getElementById("loan_type").value = (data.responseData[0]).loanType;
     document.getElementById("loan_amount").value = (data.responseData[0]).loanAmount;
+    document.getElementById("emi").value = (data.responseData[0]).emi;
     document.getElementById("status").value = (data.responseData[0]).status;
     document.getElementById("date").value = (data.responseData[0]).date;
     document.getElementById("interest").value = (data.responseData[0]).interest;

@@ -11,7 +11,6 @@ window.onload = function() {
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             json = JSON.parse(xhttp.responseText);
-            console.log(json.responseData);
             firstNameField.value = json.responseData[0]["firstName"];
             lastNameField.value = json.responseData[0]["lastName"];
             genderField.value = json.responseData[0]["gender"];

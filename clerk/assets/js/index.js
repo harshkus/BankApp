@@ -10,7 +10,7 @@ loginButton.addEventListener("click", (e) => {
     let xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
         let json = JSON.parse(xhttp.responseText);
-        if(json.responseData){
+        if(xhttp.status === 200 && json.responseData){
             window.location.replace("home.html");
         }else{
             loginErrorMsg.style.opacity = "1";
